@@ -1,6 +1,7 @@
 package org.example._02springweb_;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +13,8 @@ public class Hello {
         return "Hello, World!";
     }
 
-    @GetMapping("/john")
-    public String sayHelloJohn() {
-        return "Hello, John!";
+    @GetMapping("/{name}")
+    public String sayHelloJohn(@PathVariable String name) {
+        return "Hello,  "+ name+"!";
     }
 }
